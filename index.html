@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JavaScript Challenges</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-4 mt-3">Welcome to JavaScript Coding Challenges</h1>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card bg-secondary text-light">
+                    <div class="card-header">
+                        <h3 class="card-title">Challenge 1a</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text mb-2">
+                            Enter any two numbers in the inputs below:
+                        </div>
+                        <div class="form-group">
+                            <label for="num1">Num 1</label>
+                            <input type="text" class="form-control" id="num1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="num2">Num 2</label>
+                            <input type="text" class="form-control" id="num2">
+                        </div>
+
+                        <div id="message" class="lead pb-3"></div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success" onclick="getMessage()">Evaluate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-secondary text-light">
+                    <div class="card-header">
+                        <h3 class="card-title">Challenge 1b</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text mb-2">
+                            Check if the numbers on inputs sum contains 3 or 
+                            one of them is equal to 3
+                        </p>
+                        
+                        <div class="form-group">
+                            <label for="ini1">First Number</label>
+                            <input type="number" class="form-control" id="ini1">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ini2">First Number</label>
+                            <input type="number" class="form-control" id="ini2">
+                        </div>
+
+                        <div class="mb-2 lead" id="contains"></div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-info" onclick="containsThree()">Check</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                <div class="card bg-secondary text-light">
+                    <div class="card-header">
+                        <h3 class="card-title">Challenge 2</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Input values and get Area of a triangle</p>
+
+                        <div class="form-group">
+                            <label for="a">Side A</label>
+                            <input type="number" class="form-control" id="a">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="b">Side B</label>
+                            <input type="number" class="form-control" id="b">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="c">Side C</label>
+                            <input type="number" class="form-control" id="c">
+                        </div>
+
+                        <div class="lead pb-3" id="area"></div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" onclick="areaOfTriangle()">Calculate Area</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-3">
+                <div class="card bg-secondary text-light">
+                    <div class="card-header">
+                        <h3 class="card-title">Challenge 3</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text">Input any randon three numbers and get the largest</p>
+
+                        <div class="form-group">
+                            <label for="firstNumber">First Number</label>
+                            <input type="text" class="form-control" id="firstNumber">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="secondNumber">Second Number</label>
+                            <input type="text" class="form-control" id="secondNumber">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="thirdNumber">Third Number</label>
+                            <input type="text" class="form-control" id="thirdNumber">
+                        </div>
+
+                        <div class="lead" id="largest"></div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary" onclick="getLargestNumber()">Get Largest</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-6 mt-3">
+                <div class="card bg-secondary text-light">
+                    <div class="card-header">
+                        <h3 class="card-title">Challenge 4</h3>
+                    </div>
+                    <div class="card-body">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-3">
+                <div class="card bg-secondary text-light">
+                    <div class="card-header">
+                        <h3 class="card-title">Challenge 5</h3>
+                    </div>
+                    <div class="card-body">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3"></div>
+    </div>
+    
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
