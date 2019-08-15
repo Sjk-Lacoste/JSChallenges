@@ -1,6 +1,9 @@
 function getMessage() {
+    // Get inputs
     var a = document.getElementById('num1').value;
     var b = document.getElementById('num2').value;
+
+    // Get message tag for later manipulation
     var message = document.getElementById("message");
 
     // Convert inputs to numbers
@@ -10,11 +13,11 @@ function getMessage() {
     var result = num1 + num2;
 
     if ((num1 || num2) == 65 || result == 65) {
-        message.innerHTML = "True\n";
+        message.innerHTML = "True, ";
         message.innerHTML += "Any of the numbers or their sum is equal to 65";
         return true;
     } else {
-        message.innerHTML = "False\n";
+        message.innerHTML = "False, ";
         message.innerHTML += "Neither of the numbers nor their sum is equal to 65";
         return false;
     }
@@ -34,13 +37,13 @@ function containsThree() {
 
     while((a || b) > 0 && sum > 0) {
         if ((a || b) == 3) {
-            message.innerHTML = "First or Second number is equal to 3";
+            message.innerHTML = "True, First or Second number is equal to 3";
             return true;
         } else if(sum.toString().match(/3/)) { // check if the sum contains 3
             message.innerHTML = sum + " contains a 3";
             return true;
         } else {
-            message.innerHTML = "Neither of the numbers nor their Sum contains a 3";
+            message.innerHTML = "False, Neither of the numbers nor their Sum contains a 3";
             return false;
         }
     }
@@ -57,8 +60,8 @@ function areaOfTriangle() {
     a = new Number(v1);
     b = new Number(v2);
     c = new Number(v3);
-
-    var s = (a+b+c)/2; // half of the triangle perimeter
+    
+    var s = (a+b+c)/2; // half of the triangle's perimeter
     var area = Math.sqrt(s*(s-a)*(s-b)*(s-c));
     
     results.innerHTML = area;
@@ -88,35 +91,9 @@ function getLargestNumber() {
     }
 }
 
-function test() {
-    // Get id to display message
-    var message = document.getElementById('trueOrFalse');
-
-    // Get numbers from inputs
-    var num1 = document.getElementById('number1').value;
-    var num2 = document.getElementById('number2').value;
-
-    // convert inputs into numbers
-    a = new Number(num1);
-    b = new Number(num2);
-
-    // Create sum variable
-    var sum = a + b;
-
-    if ((a || b) === 65 || sum == 65 ) {
-        message.innerHTML = "True"; // Display message "True" to user
-        console.log("True");
-        return true;
-    } else {
-        message.innerHTML = "False"; // Display message "False" to user
-        console.log("False");
-        return false;
-    }
-}
-
 function convertToTime() {
-    var num = document.getElementById('num').value;
-    var message = document.getElementById('time_message');
+    var num = document.getElementById('num').value; // Get input
+    var message = document.getElementById('time_message'); // Get response field
 
     // convert input to number
     num1 = new Number(num);
@@ -124,5 +101,35 @@ function convertToTime() {
     var hours = Math.floor(num1 / 60);
     var minutes = num1 % 60;
 
-    message.innerHTML = hours + ":" + minutes;
+    message.innerHTML = hours + " hour(s)," + minutes + " minute(s)";
+}
+
+function getCommonChars() {
+    var string1 = document.getElementById('string1').value;
+    var string2 = document.getElementById('string2').value;
+
+    var common = document.getElementById('common');
+
+    // Make sure that we get only letters
+    var letters = /^[A-Za-z]+$/;
+
+    var length1 = string1.length;
+    var length2 = string2.length;
+    
+    var output = "";
+
+    if (string1.match(letters) || string2.match(letters)) {
+        for(var i = 0; i < length1; i++) {
+            for(var j = 0; j < length2; j++) {
+                if(string1[i] == string2[j] && output.indexOf(string1[i]) == - 1) {
+                    output += string1[i] + ",";
+                }
+            }
+        }
+        common.innerHTML = "Common characters are: " + output;
+        return output;
+    } else {
+        common.innerHTML = "You allowed to enter alphabets only!";
+        return false;
+    }
 }
