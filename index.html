@@ -142,7 +142,20 @@
                         <h3 class="card-title">Challenge 4</h3>
                     </div>
                     <div class="card-body">
+                        <p class="card-text">
+                            Type any decimal and convert it to hours and minutes (time)
+                        </p>
 
+                        <div class="form-group">
+                            <label for="num">Number</label>
+                            <input type="number" class="form-control" id="num">
+                        </div>
+
+                        <div class="lead mb-2" id="time_message"></div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success" onclick="convertToTime()">Convert</button>
+                        </div>
                     </div>
                 </div>
             </div>

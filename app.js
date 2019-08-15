@@ -113,3 +113,16 @@ function test() {
         return false;
     }
 }
+
+function convertToTime() {
+    var num = document.getElementById('num').value;
+    var message = document.getElementById('time_message');
+
+    // convert input to number
+    num1 = new Number(num);
+
+    var hours = Math.floor(num1 / 60);
+    var minutes = num1 % 60;
+
+    message.innerHTML = hours + ":" + minutes;
+}
